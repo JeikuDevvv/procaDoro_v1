@@ -62,7 +62,7 @@ stopBtn.addEventListener("click", function () {
 resetBtn.addEventListener("click", function () {
   clearInterval(intervalId);
   timerState = "work";
-  workCount = 25 * 00;
-  breakCount = 5 * 00;
+  workCount = 25 * 60;
+  breakCount = 5 * 60;
   displayTime(workCount);
 });
