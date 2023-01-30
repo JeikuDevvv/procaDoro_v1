@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&display=swap");
+
+:root {
+  --border-size: 0.125rem;
+  --duration: 250ms;
+  --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --font-family: monospace;
+  --color-primary: white;
+  --color-secondary: black;
+  --color-tertiary: dodgerblue;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --space: 1rem;
+}
+
+body {
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: slideshow 20s infinite;
+}
+
+@keyframes slideshow {
+  0% {
+    background-image: url("./assets/img/bg1.jpg");
+  }
+  16.6% {
+    background-image: url("./assets/img/bg2.jpg");
+  }
+  33.3% {
+    background-image: url("./assets/img/bg3.jpg");
+  }
+  50% {
+    background-image: url("./assets/img/bg4.jpg");
+  }
+  66.6% {
+    background-image: url("./assets/img/bg5.jpg");
+  }
+  83.3% {
+    background-image: url("./assets/img/bg6.jpg");
+  }
+  100% {
+    background-image: url("./assets/img/bg1.jpg");
+  }
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.pomo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(255, 172, 199, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+  width: 250px;
+  padding: 50px;
+  margin: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+h1 {
+  font-family: "Indie Flower", cursive;
+  font-size: 100px;
+  color: palevioletred;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+#timer {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 100px;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  box-shadow: var(--shadow) 4px 4px;
+}
+
+.button-container button {
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  padding: calc(var(--space) / 1.125) var(--space) var(--space);
+  border: var(--border-size) solid black;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  font-size: 1.5rem;
+  font-family: var(--font-family);
+  text-transform: lowercase;
+  text-shadow: var(--shadow) 2px 2px;
+  transition: flex-grow var(--duration) var(--ease);
+}
+
+.button-container button + button {
+  border-left: var(--border-size) solid black;
+  margin-left: calc(var(--border-size) * -1);
+}
+
+.button-container button:hover,
+.button-container button:focus {
+  flex-grow: 2;
+  color: white;
+  outline: none;
+  text-shadow: none;
+  background-color: var(--color-secondary);
+}
+
+.button-container button:focus {
+  outline: var(--border-size) dashed var(--color-primary);
+  outline-offset: calc(var(--border-size) * -3);
+}
+
+.button-container:hover button:focus:not(:hover) {
+  flex-grow: 1;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  outline-color: var(--color-tertiary);
+}
+
+.button-container button:active {
+  transform: translateY(var(--border-size));
+}
