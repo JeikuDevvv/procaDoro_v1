@@ -3,8 +3,8 @@ var startBtn = document.querySelector("#startBtn");
 var stopBtn = document.querySelector("#stopBtn");
 var resetBtn = document.querySelector("#resetBtn");
 
-var workCount = 1 * 25;
-var breakCount = 1 * 5;
+var workCount = 25 * 60;
+var breakCount = 5 * 60;
 var intervalId;
 var timerState = "work";
 
@@ -25,7 +25,7 @@ function startWork() {
     var audio = new Audio("./assets/audio/afterfocus.mp3");
     audio.play();
     timerState = "break";
-    breakCount = 1 * 5;
+    breakCount = 5 * 60;
     startTimer();
   }
 }
@@ -38,7 +38,7 @@ function startBreak() {
     var audio = new Audio("./assets/audio/afterbreak.mp3");
     audio.play();
     timerState = "work";
-    workCount = 1 * 25;
+    workCount = 25 * 60;
     startTimer();
   }
 }
@@ -62,7 +62,7 @@ stopBtn.addEventListener("click", function () {
 resetBtn.addEventListener("click", function () {
   clearInterval(intervalId);
   timerState = "work";
-  workCount = 1 * 25;
-  breakCount = 1 * 5;
+  workCount = 25 * 00;
+  breakCount = 5 * 00;
   displayTime(workCount);
 });
